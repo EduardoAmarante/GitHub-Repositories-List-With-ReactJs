@@ -16,7 +16,7 @@ function App(props) {
       {/* <h1>{usuario}</h1> */}
       <h1>{usuario}</h1>
       <input name="usuario" id="usuario" value={usuario} className="usuarioInput" placeholder="Nome Usuario" onChange={e=>setUsuario(e.target.value)}/>
-      <button type='button' onClick={handlePesquisa}>Pesquisar</button>
+      <button type='button' >Pesquisar</button>
     </div>
   );
 }
