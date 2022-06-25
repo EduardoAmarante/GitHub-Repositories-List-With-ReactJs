@@ -13,9 +13,9 @@ export const Input = styled.input`
 `
 
 export const Button = styled.button`
-        border: 1px solid #000;
+        border: 1px solid #24a0ed;
         height: 1.6rem;
-        background: #000;
+        background: #24a0ed;
         color: #fff;
         border-radius: 0 .25rem .25rem 0;
 
@@ -24,10 +24,26 @@ export const Button = styled.button`
         outline: none;
         box-shadow: none;
 `
-export const Container = styled.div`
-        width: 100vw;
+export const HomeContainer = styled.div`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         height: 100vh;
+`
+
+export const Content = styled.div`
+        width: 100vw;
         display: flex;
         align-items: center;
         justify-content: center;
+`
+export const ErrorMsg = styled.span`
+        display: block;
+        color: #f00;
+        font-size: 1.2rem;
+        font-family: sans-serif;
+        text-align: center;
+        margin: 1rem 0;
+        fonte-weight: bold;
 `

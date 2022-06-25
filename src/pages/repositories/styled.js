@@ -16,9 +16,10 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
     margin: .5rem 0;
-    background: #000;
+    background: #24a0ed;
     color: #fff;
     padding: .5rem;
+    border-radius: .25rem;
 
 `
 export const Container = styled.div`
@@ -32,9 +33,10 @@ export const LinkHome = styled(Link)`
     width: 4rem;
     text-align: center;
     margin: 2rem auto;
-    background-color: #000;
+    border: 1px solid #253B55;
     text-decoration: none;
     padding: .5rem 0;
-    color: #fff;
+    color: #253B55;
     font-family: sans-serif;
+    border-radius: .35rem;
 `
