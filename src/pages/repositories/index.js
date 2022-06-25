@@ -1,24 +1,33 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import * as S from './styled';
+import { useNavigate } from 'react-router-dom';
 
 export default function Repositories() {
+  const history = useNavigate();
+  const [repositories, setRepositories] = useState([]);
+
+  useEffect(() => {
+
+    let repositoriesName = localStorage.getItem('repositoriesName');
+
+    if(repositoriesName !== null){
+      repositoriesName = JSON.parse(repositoriesName);
+      setRepositories(repositoriesName);
+      localStorage.clear();
+    } else {
+      history('/')
+    }
+    }, []);
+
   return (
     <S.Container>
-      <S.Title>Repositories</S.Title>
+      <S.Title>Repositórios</S.Title>
       <S.List>
-        <S.ListItem>Repositorio 01</S.ListItem>
-        <S.ListItem>Repositorio 02</S.ListItem>
-        <S.ListItem>Repositorio 03</S.ListItem>
-        <S.ListItem>Repositorio 04</S.ListItem>
-        <S.ListItem>Repositorio 05</S.ListItem>
-        <S.ListItem>Repositorio 06</S.ListItem>
-        <S.ListItem>Repositorio 07</S.ListItem>
-        <S.ListItem>Repositorio 08</S.ListItem>
-        <S.ListItem>Repositorio 09</S.ListItem>
-        <S.ListItem>Repositorio 10</S.ListItem>
-
+        {repositories.map( (repository) => <S.ListItem> {repository} </S.ListItem>)}
       </S.List>
+      <S.LinkHome to='/'>Voltar</S.LinkHome>
     </S.Container>
+
   );
 }
     
